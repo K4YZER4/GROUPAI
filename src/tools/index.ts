@@ -1,3 +1,5 @@
 import { fileToolsDeclarations } from "./files.tools";
 import { executeTool } from "./tools.executor";
-export { fileToolsDeclarations, executeTool };
+import { bashToolsDeclarations } from "./bash.tools";
+const allTools = [...fileToolsDeclarations, ...bashToolsDeclarations];
+export { fileToolsDeclarations, executeTool, bashToolsDeclarations, allTools };

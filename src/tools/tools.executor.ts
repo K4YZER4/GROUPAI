@@ -1,9 +1,16 @@
-import { createFile, deleteFile, readFile, renameFile, logger } from "../utils"; //import file operation functions and logger
+import {
+  createFile,
+  deleteFile,
+  readFile,
+  renameFile,
+  logger,
+  executeCommand,
+} from "../utils"; //import file operation functions and logger
 
-const executeTool = (
+const executeTool = async (
   toolName: string,
   content: Record<string, string>,
-): string => {
+): Promise<string> => {
   logger.log(`Executing tool: ${toolName}`);
   switch (toolName) {
     case "createFile":
@@ -18,6 +25,9 @@ const executeTool = (
     case "readFile":
       const fileContent = readFile(content.name);
       return `Content of ${content.name}: ${fileContent}`;
+    case "executeCommand":
+      const result = executeCommand(content.command);
+      return `Command executed: ${content.command}\nOutput: ${result}`;
     default:
       return `Tool ${toolName} not recognized.`;
   }

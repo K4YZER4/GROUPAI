@@ -1,3 +1,12 @@
 import { createFile, deleteFile, readFile, renameFile } from "./files.utils";
 import { logger } from "./logger.utils";
-export { createFile, deleteFile, readFile, renameFile, logger };
+import { executeCommand, currentDir } from "./bash.utils";
+export {
+  createFile,
+  deleteFile,
+  readFile,
+  renameFile,
+  logger,
+  executeCommand,
+  currentDir,
+};
