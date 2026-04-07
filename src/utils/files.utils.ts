@@ -8,10 +8,7 @@ const deleteFile = (name: string) => {
 const renameFile = (oldName: string, newName: string) => {
   fs.renameSync(oldName, newName);
 };
-const updateFile = (name: string, content: string) => {
-  fs.writeFileSync(name, content);
-};
 const readFile = (name: string): string => {
   return fs.readFileSync(name, "utf-8");
 };
-export { createFile, deleteFile, renameFile, updateFile, readFile };
+export { createFile, deleteFile, renameFile, readFile };

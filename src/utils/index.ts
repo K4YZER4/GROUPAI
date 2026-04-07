@@ -1,9 +1,3 @@
-import {
-  createFile,
-  deleteFile,
-  updateFile,
-  readFile,
-  renameFile,
-} from "./files.utils";
+import { createFile, deleteFile, readFile, renameFile } from "./files.utils";
 import { logger } from "./logger.utils";
-export { createFile, deleteFile, updateFile, readFile, renameFile, logger };
+export { createFile, deleteFile, readFile, renameFile, logger };
