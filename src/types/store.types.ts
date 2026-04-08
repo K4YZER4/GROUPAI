@@ -1,16 +1,16 @@
-interface conversationContent {
+interface ConversationContent {
   role: "user" | "model";
   content: string;
   timestamp: number;
 }
-interface project {
+interface Project {
   id: string;
   name: string;
   path: string;
   createdAt: number;
-  conversation: conversationContent[];
+  conversation: ConversationContent[];
 }
-interface projectStore {
-  allProjects: project[];
+interface ProjectStore {
+  allProjects: Project[];
 }
-export type { project, conversationContent, projectStore };
+export type { Project, ConversationContent, ProjectStore };
