@@ -3,11 +3,14 @@ import express, { Request, Response } from "express"; //import express, { Reques
 import { GoogleGenAI } from "@google/genai";
 import fs from "fs"; //import fs to read files
 import { geminiRouter } from "./routes/gemini.routes";
+import { routerStore } from "./routes/store.routes";
 console.log(process.env.GEMINI_API_KEY);
 //dotenv.config(); //load environment variables from .env <file></file>
 const app = express(); //create an instance of express
 app.use(express.json()); //use express.json() middleware to parse JSON request bodies
 app.use("/api", geminiRouter);
+app.use("/store", routerStore);
+
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello, World!"); //send a response to the client
 });
